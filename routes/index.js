@@ -1,3 +1,7 @@
+/**
+ * Have Routes here for your views.
+ */
+
 const express = require('express');
 const router = express.Router();
 
