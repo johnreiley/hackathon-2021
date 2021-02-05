@@ -1,3 +1,8 @@
+/**
+ * The Controller is how you interact with the database. The methods are exported
+ * to be used in the api file.
+ */
+
 const ToyCar = require('../models/ToyCar');
 
 exports.getToyCars = async (req, res, next) => {

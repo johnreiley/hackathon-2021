@@ -6,7 +6,6 @@ const { getToyCars, getToyCarById, addToyCar, updateToyCar, deleteToyCar } = req
 
 /**
  * 
- * 
  * Add your routes for your API endpoints here. Don't forget to add your  controller!  
  */
 
