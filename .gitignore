@@ -10,4 +10,5 @@ npm-debug.log
 
 # Files
 config/keys.js
-Mongo Express Node Template.postman_collection.json
+
+.vscode/launch.json
