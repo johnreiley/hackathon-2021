@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-/**Toy Car Controller */
-const { getToyCars, getToyCarById, addToyCar, updateToyCar, deleteToyCar } = require('../controllers/toycar-controller');
+/* Project Controller */ 
+const { getProjects, getProjectById, addProject, updateProject, deleteProject} = require('../controllers/project-controller')
 
 /**
  * 
@@ -10,14 +10,14 @@ const { getToyCars, getToyCarById, addToyCar, updateToyCar, deleteToyCar } = req
  */
 
 router
-    .route('/toycars/')
-    .get(getToyCars)
-    .post(addToyCar)
+    .route('/projects/')
+    .get(getProjects)
+    .post(addProject)
 
-route
-    .route('/toycars/:id')
-    .get(getToyCarById)
-    .delete(deleteToyCar)
-    .put(updateToyCar)
+router
+    .route('/projects/:id')
+    .get(getProjectById)
+    .put(updateProject)
+    .delete(deleteProject)
 
 module.exports = router;
