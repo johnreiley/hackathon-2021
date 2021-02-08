@@ -1,0 +1,4 @@
+.register-container, .login-container {
+  display: flex;
+  justify-content: center;
+}
