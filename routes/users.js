@@ -14,10 +14,10 @@ router.get('/register', forwardAuthenticated, (req, res) => res.render('register
 
 // Register
 router.post('/register', (req, res) => {
-  const { name, email, password, password2, birthday } = req.body;
+  const { name, email, password, password2 } = req.body;
   let errors = [];
 
-  if (!name || !email || !password || !password2 || !birthday) {
+  if (!name || !email || !password || !password2) {
     errors.push({ msg: 'Please enter all fields' });
   }
 
@@ -47,14 +47,12 @@ router.post('/register', (req, res) => {
           email,
           password,
           password2, 
-          bday
         });
       } else {
         const newUser = new User({
           name,
           email,
           password,
-          birthday
         });
 
         bcrypt.genSalt(10, (err, salt) => {
@@ -64,10 +62,10 @@ router.post('/register', (req, res) => {
             newUser
               .save()
               .then(user => {
-                req.flash(
+               /*  req.flash(
                   'success_msg',
                   'You are now registered and can log in'
-                );
+                ); */ // Will fix this part - Cameron :) 
                 res.redirect('/users/login');
               })
               .catch(err => console.log(err));
@@ -91,7 +89,7 @@ router.post('/login', (req, res, next) => {
 // Logout
 router.get('/logout', (req, res) => {
   req.logout();
-  req.flash('success_msg', 'You are logged out');
+  // req.flash('success_msg', 'You are logged out');
   res.redirect('/users/login');
 });
 
