@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const session = require('express-session');
 const path = require('path');
-
+require('dotenv').config()
 
 
 const app = express();
@@ -13,13 +13,14 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Passport Config
-// require('./config/passport')(passport);
+require('./config/passport')(passport);
 
 // DB Config
-const db = require('./config/keys').MongoURI;
+//const db = require('./config/keys').MongoURI;
 
 // Db Connection from .env file
-// const db = process.env.MONGO_URI;
+const db = process.env.MONGO_URI;
+
 
 // Connect to MongoDB
 if (db !== '[YOUR CONNECTION STRING HERE]') {
@@ -55,6 +56,12 @@ app.use(passport.session());
 
 // Routes
 app.use('/', require('./routes/index.js'));
+
+// User Routes
+app.use('/users', require('./routes/users.js'));
+
+// Project Routes
+app.use('/api', require('./api/api.js'));
 
 
 const PORT = process.env.PORT || 8000;
