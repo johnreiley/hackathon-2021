@@ -18,7 +18,31 @@ footer {
   text-align: center;
 }
 
-.register-container, .login-container {
+.register-container,
+.login-container {
   display: flex;
   justify-content: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+
+.card {
+  margin: 1%;
+  width: 500px;
+}
+
+.tag {
+  padding: 0.3em 0.5em 0.3em 0.5em;
+  margin: 0.2em 0.5em 0.2em 0;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+}
+
+.badge-text {
+  padding-right: 0.5em;
+  line-height: 20px;
 }
