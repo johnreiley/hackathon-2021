@@ -36,6 +36,9 @@ const ProjectSchema = new mongoose.Schema({
     },
     tags: {
         type: [String]
+    },
+    limit: {
+        type: Number
     }
 });
 
