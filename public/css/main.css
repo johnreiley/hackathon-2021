@@ -22,15 +22,6 @@ footer {
   text-align: center;
 }
 
-#projects {
-  margin: .5rem;
-  padding-bottom: .5em;
-  display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(170px,1fr));
-  grid-gap: .5rem;
-  justify-content: space-evenly;
-  }
-
 /* LOGIN/SIGNUP  */
 .register-container,
 .login-container {
