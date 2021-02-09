@@ -8,6 +8,10 @@ body {
   flex-direction: column;
 }
 
+h1 {
+  text-align: center;
+}
+
 main {
   flex: 1;
 }
@@ -18,10 +22,9 @@ footer {
   text-align: center;
 }
 
-
-
 /* LOGIN/SIGNUP  */
-.register-container, .login-container {
+.register-container,
+.login-container {
   display: flex;
   justify-content: center;
 }
@@ -29,4 +32,23 @@ footer {
  /* ADD PROJECT */
 #addProjectContent {
   max-width: 700px;
+}
+
+/* OVERRIDES */
+.card {
+  margin: 1%;
+  width: 500px;
+}
+
+.tag {
+  padding: 0.3em 0.5em 0.3em 0.5em;
+  margin: 0.2em 0.5em 0.2em 0;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+}
+
+.badge-text {
+  padding-right: 0.5em;
+  line-height: 20px;
 }
