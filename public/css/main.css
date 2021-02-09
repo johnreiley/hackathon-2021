@@ -8,6 +8,10 @@ body {
   flex-direction: column;
 }
 
+h1 {
+  text-align: center;
+}
+
 main {
   flex: 1;
 }
@@ -18,17 +22,28 @@ footer {
   text-align: center;
 }
 
+#projects {
+  margin: .5rem;
+  padding-bottom: .5em;
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(170px,1fr));
+  grid-gap: .5rem;
+  justify-content: space-evenly;
+  }
+
+/* LOGIN/SIGNUP  */
 .register-container,
 .login-container {
   display: flex;
   justify-content: center;
 }
 
-h1 {
-  text-align: center;
+ /* ADD PROJECT */
+#addProjectContent {
+  max-width: 700px;
 }
 
-
+/* OVERRIDES */
 .card {
   margin: 1%;
   width: 500px;
