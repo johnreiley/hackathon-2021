@@ -33,7 +33,10 @@ const ProjectSchema = new mongoose.Schema({
     },
     image: {
         type: String
-}
+    },
+    tags: {
+        type: [String]
+    }
 });
 
 const Project = mongoose.model('project', ProjectSchema);
