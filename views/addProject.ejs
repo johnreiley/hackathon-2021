@@ -1,1 +1,53 @@
-<h1>Add A Project</h1>
+<div class="container mt-5" id="addProjectContent">
+  <div class="row">
+    <div class="col">
+      <h1>Create a Project</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <form id="addProjectForm">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input class="form-control" type="text" name="title" id="title" placeholder="What's your project called?" required>
+        </div>
+        <div class="form-group">
+          <label for="image">Image <small>(Optional)</small></label>
+          <input class="form-control" type="url" name="image" id="image" placeholder="Enter an image url">
+        </div>
+        <div class="form-group">
+          <label for="location">Location</label>
+          <input class="form-control" type="text" name="location" id="location" placeholder="Where will it be?" required>
+        </div>
+        <div class="form-group">
+          <label for="title">Time <small>(Optional)</small></label>
+          <input class="form-control" type="time" name="time" id="time" placeholder="What time is it at?">
+        </div>
+        <div class="form-group">
+          <label for="title">Start Date</label>
+          <input class="form-control" type="date" name="startDate" id="startDate" min="" placeholder="Start Date" required>
+        </div>
+        <div class="form-group">
+          <label for="title">End Date <small>(Optional)</small></label>
+          <input class="form-control" type="date" name="endDate" id="endDate" placeholder="When will it end?">
+        </div>
+        <div class="form-group">
+          <label for="title">Volunteer Limit <small>(Optional)</small></label>
+          <input class="form-control" type="number" name="limit" id="limit" min="1" max="99999" placeholder="How many volunteers do you need?">
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea class="form-control" name="description" id="description" cols="30" rows="10" placeholder="What is your project all about?" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="description">Tags <small>(separate by commas)</small></label>
+          <input class="form-control" type="text" name="tags" id="tags" placeholder="community & people, technology, environment...">
+        </div>
+        <div class="form-group">
+          <button onclick="onSubmit()" type="submit" class="btn btn-primary">Publish my project</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script src="./js/AddProject.js"></script>
