@@ -29,6 +29,26 @@ footer {
   justify-content: center;
 }
 
+/* HOME */
+.search-box {
+  z-index: 20;
+  position: relative;
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--box-shadow-sm);
+}
+  .search-box input {
+    max-width: 300px;
+    margin-right: 0.5em;
+  }
+
+.info-cards {
+  margin: auto;
+  max-width: 800px;
+}
+
  /* ADD PROJECT */
 #addProjectContent {
   max-width: 700px;

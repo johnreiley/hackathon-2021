@@ -1,4 +1,34 @@
-<div class="main-content">
-  <h1>Mongo Express Node Template</h1>
-  <p>Edit <code>index.js</code> to get started</p>
+<div class="content">
+  <div class="jumbotron">
+    <h1>Find volunteer opporunties near you!</h1>
+  </div>
+  <div class="search-box">
+    <input id="searchInput" class="form-control" type="text" placeholder="Enter a location or zip code">
+    <button onclick="onSearch()" class="input-group-addon btn btn-success">Search</button>
+  </div>
+  <div class="jumbotron">
+    <div class="info-cards">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Sign up and volunteer!</h5>
+              <p class="card-text">When you sign up, you'll have the opportunity to volunteer for great volunteer opportunites.</p>
+              <a href="/users/register" class="btn btn-primary">Sign up</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Create opporunties for others!</h5>
+              <p class="card-text">By creating a project, you are giving others in your community an opportunity to contribute.</p>
+              <a href="/addProject" class="btn btn-primary">Create a project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+<script src="/scripts/projectsSearch.js"></script>
