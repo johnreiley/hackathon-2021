@@ -30,9 +30,9 @@ async function renderProjectInfo(project) {
         <p class="card-text">Date: ${startDate.toLocaleDateString()}</p>
         <p class="card-text">Time: ${startDate.toLocaleTimeString()}</p>`;
     if (project.limit === undefined) {
-        projectCard += `<p class="card-text">Open Voulenteer Spots: ¯\\_(ツ)_/¯</p>`;
+        projectCard += `<p class="card-text">Open Volunteer Spots: ¯\\_(ツ)_/¯</p>`;
     } else {
-        projectCard += `<p class="card-text">Open Voulenteer Spots: ${project.limit}</p>`;
+        projectCard += `<p class="card-text">Open Volunteer Spots: ${project.limit}</p>`;
     }
     // Address stuff here
     projectCard += `<a href="#" class="card-link btn btn-outline-primary">Volunteer</a>
