@@ -1,6 +1,20 @@
-
+<style>
+    .center {
+        margin: auto;
+        width: 20%;
+        padding: 10px;
+    }
+    .center1 {
+        margin: auto;
+        width: 20%;
+        border: 5px solid #78a5e7;
+        padding: 10px;
+    }
+</style>
 <h1 class="">Dashboard</h1>
-<p class="l">Welcome <%= user.name %></p>
-<a href="/addProject" class="btn dashboard-btn">Add A Project!</a>
-<a href="/users/logout" class="btn dashboard-btn">Logout</a>
+<h2 class="l center">Welcome <%= user.name %></h2>
+<div class="form-group center1">
+    <a href="/addProject" class="btn btn-primary">Add A Project!</a>
+    <a href="/users/logout" class="btn btn-primary">Logout</a>
+</div>
 <div id="favs"></div>
