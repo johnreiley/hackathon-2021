@@ -83,6 +83,10 @@
 .card-footer:last-child {
   border-radius: 0 0 var(--border-radius-md) var(--border-radius-md);
 }
+.card-img-top {
+  border-top-left-radius: var(--border-radius-md);
+  border-top-right-radius: var(--border-radius-md);
+}
 
 /* MODALS */
 .modal-content {

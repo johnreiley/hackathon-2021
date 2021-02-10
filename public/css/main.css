@@ -34,12 +34,20 @@ footer {
   max-width: 700px;
 }
 
-/* OVERRIDES */
-.card {
-  margin: 1%;
-  width: 500px;
+/* VIEW PROJECT LIST */
+#projectsContent {
+  max-width: 900px;
+}
+#projects {
+  margin: .5rem;
+  padding-bottom: .5em;
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(230px,1fr));
+  grid-gap: 1rem;
+  justify-content: space-evenly;
 }
 
+/* OVERRIDES */
 .tag {
   padding: 0.3em 0.5em 0.3em 0.5em;
   margin: 0.2em 0.5em 0.2em 0;
@@ -47,8 +55,7 @@ footer {
   align-items: center;
   width: fit-content;
 }
-
-.badge-text {
-  padding-right: 0.5em;
-  line-height: 20px;
-}
+  .tag .badge-text {
+    padding-right: 0.5em;
+    line-height: 20px;
+  }
