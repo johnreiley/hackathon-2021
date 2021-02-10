@@ -43,11 +43,20 @@
           <label for="description">Tags <small>(separate by commas)</small></label>
           <input class="form-control" type="text" name="tags" id="tags" placeholder="community & people, technology, environment...">
         </div>
+        <!-- <div class="checkbox">
+          <label>
+            <input type="checkbox" name="isPrivate" id="isPrivate">
+            Make Private <small>(only people with the URL will be able to find this project)</small>
+          </label>
+        </div> -->
         <div class="form-group">
-          <button onclick="onSubmit()" type="submit" class="btn btn-primary">Publish my project</button>
+          <button type="submit" class="btn btn-primary">Publish my project</button>
         </div>
       </form>
     </div>
   </div>
 </div>
+<script>
+  var userId = "<%= user._id %>"
+</script>
 <script src="./js/AddProject.js"></script>
