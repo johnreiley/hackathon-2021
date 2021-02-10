@@ -1,9 +1,9 @@
 async function loadDoc() {
     await fetch(`/api/projects`)
-    .then(res => res.json())
-    .then(data => {
-        displayProjects(data.data);
-    })
+        .then(res => res.json())
+        .then(data => {
+            displayProjects(data.data);
+        })
 
 }
 
@@ -11,6 +11,10 @@ function displayProjects(projects) {
     var projectContainer = document.getElementById('projects')
     projects.forEach(async (project) => {
         var organizer = await getOrganizer(project.organizer)
+        var today = new Date()
+        var projectDate = new Date(project.dateStart)
+        var one_day = 1000 * 60 * 60 * 24;
+        var timeLeft = Math.ceil((projectDate.getTime() - today.getTime()) / (one_day))
 
         var cardHtml = `    
     <div class="card">
@@ -20,9 +24,10 @@ function displayProjects(projects) {
             <h6 class="card-subtitle text-muted">${organizer.name}</h6>
             <p class="card-text">${project.description}</p>
             <a href="#" class="card-link btn btn-outline-primary">Volunteer</a>
+            <a href="/project?id=${project._id}" class="card-link btn btn-outline-secondary">More Info</a>
         </div>
         <div class="card-footer text-muted">
-            Added 2 days ago
+            Days left until project ${timeLeft}
         </div>
     </div>`;
         projectContainer.innerHTML += cardHtml;
@@ -33,11 +38,7 @@ async function getOrganizer(id) {
     var user = await fetch(`/api/user/${id}`)
         .then(res => res.json())
         .then(data => {
-
             return data.data
         })
-
-
-
     return user;
 }

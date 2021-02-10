@@ -39,17 +39,22 @@ footer {
   align-items: center;
   box-shadow: var(--box-shadow-sm);
 }
-  .search-box input {
-    max-width: 300px;
-    margin-right: 0.5em;
-  }
+
+.search-box input {
+  max-width: 300px;
+  margin-right: 0.5em;
+}
 
 .info-cards {
   margin: auto;
   max-width: 800px;
 }
 
- /* ADD PROJECT */
+#project {
+  max-width: 800px;
+}
+
+/* ADD PROJECT */
 #addProjectContent {
   max-width: 700px;
 }
@@ -58,14 +63,17 @@ footer {
 #projectsContent {
   max-width: 900px;
 }
+
 #projects {
   margin: .5rem;
   padding-bottom: .5em;
   display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(230px,1fr));
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
   grid-gap: 1rem;
   justify-content: space-evenly;
 }
+
+
 
 /* OVERRIDES */
 .tag {
@@ -75,7 +83,8 @@ footer {
   align-items: center;
   width: fit-content;
 }
-  .tag .badge-text {
-    padding-right: 0.5em;
-    line-height: 20px;
-  }
+
+.tag .badge-text {
+  padding-right: 0.5em;
+  line-height: 20px;
+}
