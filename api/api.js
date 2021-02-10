@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
-/* Project Controller */ 
-const { getProjects, getProjectById, addProject, updateProject, deleteProject} = require('../controllers/project-controller')
+/* Project Controller */
+const { getProjects, getProjectById, addProject, updateProject, deleteProject, volunteerProject } = require('../controllers/project-controller')
 
 /* User Controller */
-const {getUserById} = require('../controllers/user-controller')
+const { getUserById } = require('../controllers/user-controller')
 
 /**
  * 
@@ -22,6 +22,10 @@ router
     .get(getProjectById)
     .put(updateProject)
     .delete(deleteProject)
+
+router
+    .route('/volunteer/:id')
+    .put(volunteerProject)
 
 router
     .route('/user/:id')
