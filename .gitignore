@@ -14,5 +14,3 @@ config/keys.js
 .vscode/launch.json
 
 config/keys.js
-
-package-lock.json
