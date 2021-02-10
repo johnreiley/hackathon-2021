@@ -63,7 +63,8 @@
 
 /* JUMBOTRON */
 .jumbotron {
-  border-radius: var(--border-radius-md);
+  border-radius: 0;
+  margin-bottom: 0;
 }
 
 /* LISTS */
