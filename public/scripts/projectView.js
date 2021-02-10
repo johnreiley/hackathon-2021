@@ -16,6 +16,7 @@ function renderProjectInfo(project) {
 
 async function renderProjectInfo(project) {
     var projectContainer = document.getElementById('project-container')
+    projectContainer.innerHTML = '';
 
     var organizer = await getOrganizer(project.organizer)
     console.log(project)
@@ -30,14 +31,20 @@ async function renderProjectInfo(project) {
         <p class="card-text">Date: ${startDate.toLocaleDateString()}</p>
         <p class="card-text">Time: ${startDate.toLocaleTimeString()}</p>`;
     if (project.limit === undefined) {
-        projectCard += `<p class="card-text">Open Voulenteer Spots: ¯\\_(ツ)_/¯</p>`;
+        projectCard += `<p class="card-text">Open Volunteer Spots: ¯\\_(ツ)_/¯</p>`;
     } else {
-        projectCard += `<p class="card-text">Open Voulenteer Spots: ${project.limit}</p>`;
+        projectCard += `<p class="card-text">Open Volunteer Spots: ${project.limit - project.volunteers.length}</p>`;
     }
     // Address stuff here
-    projectCard += `<a href="#" class="card-link btn btn-outline-primary">Volunteer</a>
-    </div>
-</div>`;
+    if (project.limit - project.volunteers.length !== 0) {
+        projectCard += `<button class="card-link btn btn-outline-primary" onclick="volunteer('${project._id}')">Volunteer</button>`
+    } else {
+        projectCard += `<button class="card-link btn btn-outline-primary disabled" disabled onclick="volunteer('${project._id}')">Volunteer</button>`
+
+    }
+
+    projectCard += `</div>
+    </div>`;
     projectContainer.innerHTML += projectCard;
 }
 
