@@ -1,4 +1,8 @@
 function onSearch() {
   let searchQuery = document.getElementById('searchInput').value;
-  window.location.href = `/projects?search=${searchQuery}`;
+  if (searchQuery) {
+    window.location.href = `/projects?search=${searchQuery}`;
+  } else {
+    window.location.href = "/projects";
+  }
 }

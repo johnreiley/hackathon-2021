@@ -1,5 +1,8 @@
 async function loadDoc() {
-    await fetch(`/api/projects`)
+    let urlParams = new URLSearchParams(window.location.search);
+    let baseUrl = `/api/projects`;
+    let url = urlParams.has('search') ? `${baseUrl}?search=${urlParams.get('search')}` : baseUrl;
+    await fetch(url)
     .then(res => res.json())
     .then(data => {
         displayProjects(data.data);
