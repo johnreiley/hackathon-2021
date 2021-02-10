@@ -12,7 +12,15 @@ const Project = require('../models/Project.js');
  */
 exports.getProjects = async (req, res, next) => {
     try {
-        const projects = await Project.find();
+        let projects = [];
+        if (req.query.search) {
+            let search = req.query.search;
+            let regex = new RegExp(`.*${search}.*`);
+            let query = { $regex: regex, $options: 'i' };
+            projects = await Project.find({ $or: [{title: query}, {location: query}, {tags: query}] }).exec();
+        } else {
+            projects = await Project.find();
+        }
 
         return res.status(200).json({
             success: true,

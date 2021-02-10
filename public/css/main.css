@@ -65,7 +65,7 @@ footer {
 }
 
 #projects {
-  margin: .5rem;
+  margin: 1em 0 1em 0;
   padding-bottom: .5em;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
