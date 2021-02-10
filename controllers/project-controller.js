@@ -45,7 +45,7 @@ exports.getProjectById = async (req, res, next) => {
     try {
         const project = await Project.findById(req.params.id);
         if (!project) {
-            return res.status(404).json( {
+            return res.status(404).json({
                 success: false,
                 error: 'Project Not Found'
             })
@@ -72,7 +72,7 @@ exports.updateProject = async (req, res, next) => {
     try {
         const project = await Project.findById(req.params.id).exec();
         if (!project) {
-            return res.status(404).json( {
+            return res.status(404).json({
                 success: false,
                 error: 'Project Not Found'
             })
@@ -107,9 +107,9 @@ exports.addProject = async (req, res, next) => {
             data: project
         })
     } catch (error) {
-        if(error.name === 'ValidationError') {
+        if (error.name === 'ValidationError') {
             const messages = Object.values(error.errors).map(val => val.message);
-            
+
             return res.status(400).json({
                 success: false,
                 error: messages
@@ -134,7 +134,7 @@ exports.deleteProject = async (req, res, next) => {
     try {
         const project = await Project.findById(req.params.id);
         if (!project) {
-            return res.status(404).json( {
+            return res.status(404).json({
                 success: false,
                 error: 'Project Not Found'
             })
@@ -150,6 +150,44 @@ exports.deleteProject = async (req, res, next) => {
         return res.status(500).json({
             success: false,
             error: `Error Deleting Project: ${error.message}`
+        })
+    }
+}
+
+// Volunteer
+exports.volunteerProject = async (req, res, next) => {
+    try {
+        console.log(req.params)
+        var userId = req.user._id;
+
+        // console.log(req.user);
+        const project = await Project.findById(req.params.id)
+        if (project) {
+            if (project.volunteers.includes(userId)){
+                return res.status(405).json({
+                    success: false,
+                    error: "You Already Volunteered!" 
+                })
+            }
+            project.volunteers.push(userId);
+            console.log(project)
+            await project.save();
+
+            return res.status(200).json({
+                success: true,
+                data: project
+
+            })
+        } else {
+            return res.status(500).json({
+                success: false,
+                error: `Error Volunteering: ${error.message}`
+            })
+        }
+    } catch (error) {
+        return res.status(401).json({
+            success: false,
+            error: `Please Login`
         })
     }
 }
