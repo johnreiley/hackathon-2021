@@ -9,6 +9,11 @@
   --border-radius-lg: 15px;
 }
 
+/* GENERAL */
+.rounded {
+  border-radius: var(--border-radius-md) !important;
+}
+
 /* BUTTONS */
 [class*="btn-"] {
   border-radius: 10px;
